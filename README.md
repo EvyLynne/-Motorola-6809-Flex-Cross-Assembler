@@ -6,6 +6,8 @@ This project is written and compiled using GCC version 10.2.0
 in Ubuntu 20.10 running in Oracle VM VirtualBox on a Windows Version 10.0.19042.746 host machine.
 This project focuses solely on the cross assembler.
 
+In order to enforce standards, I wrote the specs into a BASH compile script
+
 Awesome resources and folks (not exhaustive):
 https://lennartb.home.xs4all.nl/m6809.html
 http://www.flexusergroup.com/flexusergroup/default.htm
