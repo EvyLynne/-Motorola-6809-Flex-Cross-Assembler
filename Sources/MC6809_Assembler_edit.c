@@ -857,7 +857,7 @@ void putword(unsigned short w)
  codebuf[codeptr++]=w&0x0ff;
 }
 
-doaddress() /* assemble the right addressing bytes for an instruction */
+void doaddress() /* assemble the right addressing bytes for an instruction */
 {
  int offs;
  switch(mode) {
@@ -934,7 +934,7 @@ void lbra(int co)
  putword(operand-loccounter-3);
 }
 
-lbranch(int co)
+void lbranch(int co)
 {
  scanoperands();
  if(mode!=1&&mode!=2)error|=2;
@@ -942,7 +942,7 @@ lbranch(int co)
  putword(operand-loccounter-4);
 }
 
-arith(int co)
+void arith(int co)
 {
  scanoperands();
  switch(mode) {
@@ -951,10 +951,10 @@ arith(int co)
  case 2:putbyte(co+0x030);break;
  default:putbyte(co+0x020);
  }
- doaddress();
+  doaddress();
 }
 
-darith(int co)
+void darith(int co)
 {
  scanoperands();
  switch(mode) {
@@ -966,7 +966,7 @@ darith(int co)
  doaddress();
 }
 
-d2arith(int co)
+void d2arith(int co)
 {
  scanoperands();
  switch(mode) {
@@ -978,7 +978,7 @@ d2arith(int co)
  doaddress();
 }
 
-oneaddr(int co)
+void oneaddr(int co)
 {
  scanoperands();
  switch(mode) {
@@ -990,7 +990,7 @@ oneaddr(int co)
  doaddress();
 }
 
-tfrexg(int co)
+void tfrexg(int co)
 {
  struct regrecord * p;
  putbyte(co);
@@ -1007,7 +1007,7 @@ tfrexg(int co)
  putbyte(postbyte);
 }
 
-pshpul(int co)
+void pshpul(int co)
 {
  struct regrecord *p;
  putbyte(co);
@@ -1023,7 +1023,7 @@ pshpul(int co)
  putbyte(postbyte);
 }
 
-pseudoop(int co,struct symrecord * lp)
+void pseudoop(int co,struct symrecord * lp)
 {
  int i;
  char c;
@@ -1174,7 +1174,7 @@ pseudoop(int co,struct symrecord * lp)
 }
 
 
-processline()
+void processline()
 {
  struct symrecord * lp;
  struct oprecord * op;
@@ -1229,7 +1229,7 @@ processline()
  loccounter+=codeptr;
 }
 
-suppressline()
+void suppressline()
 {
  struct oprecord * op;
  srcptr=srcline;
@@ -1252,14 +1252,13 @@ suppressline()
  if(pass==2&&listing)outlist();
 }
 
-usage(char*nm)
+void usage(char*nm)
 {
   fprintf(stderr,"Usage: %s [-o objname] [-l listname] srcname\n",nm);
   exit(2);
 }
 
-
-getoptions(int c,char*v[])
+void getoptions(int c,char*v[])
 {
  int i=0;
  if(c==1)usage(v[0]);
@@ -1296,7 +1295,7 @@ getoptions(int c,char*v[])
  listing=listname[0]!=0;
 }
 
-expandline()
+void expandline()
 {
  int i=0,j=0,k,j1;
  for(i=0;i<128&&j<128;i++)
@@ -1313,7 +1312,7 @@ expandline()
 }
 
 
-processfile(char *name)
+int processfile(char *name)
 {
  char oldname[FNLEN+1];
  int oldno;
@@ -1342,7 +1341,7 @@ processfile(char *name)
  strcpy(curname,oldname);
 }
 
-main(int argc,char *argv[])
+int main(int argc,char *argv[])
 {
  char c;
  getoptions(argc,argv);
