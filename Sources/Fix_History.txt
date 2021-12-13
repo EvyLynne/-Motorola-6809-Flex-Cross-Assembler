@@ -1,0 +1,52 @@
+Warnings solved:
+1. added #include <stdlib.h> to resolve:
+MC6809_Assembler.c: In function 'findsym':
+MC6809_Assembler.c:204:4: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+    exit(4);
+
+
+2. Functions missing return type void:
+
+outsymtable()
+scanname()
+skipspace()
+set3()
+scanspecial()
+scanindexed()
+scanoperands()
+flushhex()
+flushihex()
+outhex(unsigned char x)
+outihex(unsigned char x)
+outbuffer()
+report()
+outlist()
+setlabel(struct symrecord * lp)
+putbyte(unsigned char b)
+putword(unsigned short w)
+doaddress()
+onebyte(int co)
+twobyte(int co)
+oneimm(int co)
+lea(int co)
+sbranch(int co)
+lbra(int co)
+doaddress()
+lbranch(int co)
+doaddress()
+darith(int co)
+d2arith(int co)
+oneaddr(int co)
+tfrexg(int co)
+pshpul(int co)
+pseudoop(int co,struct symrecord * lp)
+processline()
+arith(int co)
+suppressline()
+usage(char*nm)
+getoptions(int c,char*v[])
+expandline()
+
+3. processfile(char *name) missing return type. set to int.
+main function missing return type.  set to int.
+4. implicit declaration of files: int processfile(char *name) in function pseudoop
