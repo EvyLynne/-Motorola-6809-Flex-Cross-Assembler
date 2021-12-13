@@ -35,4 +35,4 @@ I found a source file written in C after the ANSI standard was started here: htt
 I re-installed GCC and ran version 6.3.0 (in error - it's older).
  
 After debugging the original file, there were function dependency issues (i.e. implicit declaration).  
-I separated the functions and prototyped them using the ANSI C standard as of this writing - 12/13/2021
+I began separating the functions and prototyped them using the ANSI C standard as of this writing - 12/13/2021
