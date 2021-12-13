@@ -1,0 +1,33 @@
+Warnings solved:
+1. added #include <stdlib.h> to resolve:
+MC6809_Assembler.c: In function 'findsym':
+MC6809_Assembler.c:204:4: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+    exit(4);
+ 
+
+2. Functions missing return type void:
+
+outsymtable()
+scanname()
+skipspace()
+set3()
+scanspecial()
+scanindexed()
+scanoperands()
+flushhex()
+flushihex()
+outhex(unsigned char x)
+outihex(unsigned char x)
+outbuffer()
+report()
+outlist()
+setlabel(struct symrecord * lp)
+putbyte(unsigned char b)
+putword(unsigned short w)
+doaddress()
+onebyte(int co)
+twobyte(int co)
+oneimm(int co)
+lea(int co)
+sbranch(int co)
+lbra(int co)
