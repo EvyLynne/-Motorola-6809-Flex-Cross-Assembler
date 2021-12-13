@@ -23,10 +23,10 @@ https://en.wikipedia.org/wiki/FLEX_(operating_system) - because Wikipedia knows 
 
 https://en.wikipedia.org/wiki/ANSI_C
 
---------------------------------------------------------------------------------
+=================
 UPDATE: I picked this project up after a long haitus and a much-needed pc ugrade. 
 I found a source file written in C after the ANSI standard was started here: http://atjs.mbnet.fi/mc6809/Assembler/A09.c 
 I re-installed GCC and ran version 6.3.0 (in error - it's older).
---------------------------------------------------------------------------------
+ 
 After debugging the original file, there were function dependency issues (i.e. implicit declaration).  
 I separated the functions and prototyped them using the ANSI C standard as of this writing - 12/13/2021
