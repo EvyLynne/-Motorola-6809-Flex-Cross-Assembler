@@ -14,7 +14,8 @@ https://lennartb.home.xs4all.nl/m6809.html
 
 http://www.flexusergroup.com/flexusergroup/default.htm
 
-Original version of The C Programming Language written by Brian W. Kernighan and Dennis M. Ritchie
+Original version of The C Programming Language written by: 
+Brian W. Kernighan and Dennis M. Ritchie
 ISBN 0-13-110163-3, Copyright 1978. 
 https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131101633
 
